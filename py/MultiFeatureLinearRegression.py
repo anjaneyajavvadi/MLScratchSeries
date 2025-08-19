@@ -36,12 +36,13 @@ class MultiFeatureLinearRegressionFromScratch:
     def mse(self, y_true, y_pred):
         return np.mean((y_true - y_pred) ** 2)
 
-X, y = make_regression(n_samples=100, n_features=10, noise=20, random_state=42)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+if __name__ == "__main__":
+    X, y = make_regression(n_samples=100, n_features=10, noise=20, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-regressor = MultiFeatureLinearRegressionFromScratch(lr=0.01, n_iters=1000)
-regressor.fit(X_train, y_train)
-y_pred = regressor.predict(X_test)
+    regressor = MultiFeatureLinearRegressionFromScratch(lr=0.01, n_iters=1000)
+    regressor.fit(X_train, y_train)
+    y_pred = regressor.predict(X_test)
 
-print("Scratch model weights:", regressor.weights)
-print("Scratch model bias:", regressor.bias)
+    print("Scratch model weights:", regressor.weights)
+    print("Scratch model bias:", regressor.bias)

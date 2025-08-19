@@ -29,23 +29,25 @@ class LinearRegressionFromScratch:
     
     def mse(self, y_true, y_pred):
         return np.mean((y_true - y_pred) ** 2)
-    
-X,y=make_regression(n_samples=100,n_features=1,noise=20,random_state=42)
-X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=42)
 
-regressor=LinearRegressionFromScratch(lr=0.01,n_iters=1000)
-regressor.fit(X_train,y_train)
-y_pred=regressor.predict(X_test)
-print("model weights and bias of scratch linear regression are:\n")
-print("Weight:", regressor.weight)
-print("Bias:", regressor.bias)
 
-print("\n")
+if __name__=="__main__":
+    X,y=make_regression(n_samples=100,n_features=1,noise=20,random_state=42)
+    X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=42)
 
-skl_regressor=LinearRegression()
-skl_regressor.fit(X_train,y_train)
-y_pred=skl_regressor.predict(X_test)
+    regressor=LinearRegressionFromScratch(lr=0.01,n_iters=1000)
+    regressor.fit(X_train,y_train)
+    y_pred=regressor.predict(X_test)
+    print("model weights and bias of scratch linear regression are:\n")
+    print("Weight:", regressor.weight)
+    print("Bias:", regressor.bias)
 
-print("model weights and bias of sklearn linear regression are:\n")
-print(skl_regressor.coef_)
-print(skl_regressor.intercept_)
+    print("\n")
+
+    skl_regressor=LinearRegression()
+    skl_regressor.fit(X_train,y_train)
+    y_pred=skl_regressor.predict(X_test)
+
+    print("model weights and bias of sklearn linear regression are:\n")
+    print(skl_regressor.coef_)
+    print(skl_regressor.intercept_)
