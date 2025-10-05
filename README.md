@@ -12,3 +12,17 @@ The goal is to understand the **mathematical intuition**, **working principles**
 - 📊 Visualize training progress, accuracy, and decision boundaries.
 - 🧩 Strengthen core understanding of **linear algebra**, **optimization**, and **statistics** behind ML.
 - 🧠 Build intuition on how real-world ML libraries work under the hood.
+
+## 🧩 Algorithms Covered (Ongoing)
+
+| Category | Algorithm | Scratch Implementation | Scikit-Learn Equivalent |
+|-----------|------------|------------------------|--------------------------|
+| **Regression** | Linear Regression | ✅ | ✅ `LinearRegression()` |
+| | Polynomial Regression | ✅ | ✅ `PolynomialFeatures` + `LinearRegression` |
+| | Logistic Regression | ✅ | ✅ `LogisticRegression()` |
+| **Classification** | K-Nearest Neighbors (KNN) | ✅ | ✅ `KNeighborsClassifier()` |
+| | Naive Bayes | ✅ | ✅ `GaussianNB()` |
+| | Support Vector Machine (SVM) | 🚧 | ✅ `SVC()` |
+| | Decision Tree | 🚧 | ✅ `DecisionTreeClassifier()` |
+| **Ensemble Methods** 
+| | Boosting (AdaBoost=) | 🚧 | ✅ `AdaBoostClassifier()`|
